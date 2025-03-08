@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="gui.PerceptronPageSetup"
+            prefHeight="347.0" prefWidth="313.0">
+    <children>
+        <Button onAction="#chooseFile" fx:id="chooseFile" layoutX="200.0" layoutY="14.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="114.0" text="choose data file" />
+        <Label fx:id="fileStatusLabel" layoutX="320.0" layoutY="17.0" style="-fx-font-size: 18; -fx-text-fill: red;" text="❌" />
+        <Button  onAction="#train" fx:id="trainButton" layoutX="323.0" layoutY="72.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="200.0" text="TRAIN AND VALIDATE" />
+        <Button onAction="#test" fx:id="testButton" layoutX="323.0" layoutY="161.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="200.0" text="TEST" />
+        <HBox alignment="CENTER_LEFT" layoutX="18.0" layoutY="114.0" prefHeight="25.0" prefWidth="202.0" spacing="10.0" />
+        <Slider fx:id="trainSlider" layoutX="68.0" layoutY="179.0" prefHeight="14.0" prefWidth="166.0" />
+        <Label layoutX="19.0" layoutY="178.0" prefHeight="17.0" prefWidth="49.0" text="Train %"  textFill="#dbfcd2" style="-fx-font-size: 10;"/>
+        <Spinner fx:id="trainSpinner" layoutX="238.0" layoutY="174.0" prefHeight="25.0" prefWidth="57.0" />
+        <TextField fx:id="learningRateTextField" layoutX="19.0" layoutY="85.0" prefHeight="25.0" prefWidth="187.0" promptText="learning rate" />
+        <TextField fx:id="epochsTextField" layoutX="19.0" layoutY="118.0" prefHeight="25.0" prefWidth="187.0" promptText="epochs" />
+        <Button onAction="#defaultLearning" fx:id="defaultLearningRateButton" layoutX="223.0" layoutY="85.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="77.0" text="default" />
+    </children>
+
+</AnchorPane>

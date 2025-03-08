@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane prefHeight="347.0" prefWidth="313.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.KNNPageSetup">
+    <children>
+        <Button fx:id="chooseFile" layoutX="200.0" layoutY="14.0" mnemonicParsing="false" onAction="#chooseFile" prefHeight="25.0" prefWidth="114.0" text="choose data file" />
+        <Label fx:id="fileStatusLabel" layoutX="320.0" layoutY="17.0" style="-fx-font-size: 18; -fx-text-fill: red;" text="❌" />
+        <Button fx:id="trainButton" layoutX="323.0" layoutY="81.0" mnemonicParsing="false" onAction="#train" prefHeight="52.0" prefWidth="200.0" text="TRAIN AND VALIDATE" />
+        <Button fx:id="testButton" layoutX="323.0" layoutY="161.0" mnemonicParsing="false" onAction="#test" prefHeight="52.0" prefWidth="200.0" text="TEST" />
+        <TextField fx:id="kTextField" layoutX="18.0" layoutY="82.0" prefHeight="25.0" prefWidth="187.0" promptText="k neighbors" />
+        <HBox alignment="CENTER_LEFT" layoutX="18.0" layoutY="114.0" prefHeight="25.0" prefWidth="276.0" spacing="10.0">
+            <children>
+                <Pane layoutX="103.0" layoutY="10.0" prefHeight="25.0" prefWidth="0.0" />
+                <RadioButton fx:id="euclideanRadio" mnemonicParsing="false" text="EUCLIDEAN" textFill="#dbfcd2">
+                    <toggleGroup>
+                        <ToggleGroup fx:id="distanceToggle" />
+                    </toggleGroup>
+                </RadioButton>
+                <Pane prefHeight="25.0" prefWidth="58.0" />
+                <RadioButton fx:id="manhattanRadio" mnemonicParsing="false" text="MANHATTAN" textFill="#dbfcd2" toggleGroup="$distanceToggle" />
+            </children>
+        </HBox>
+        <Slider fx:id="trainSlider" layoutX="68.0" layoutY="180.0" prefHeight="14.0" prefWidth="166.0" />
+        <Label layoutX="19.0" layoutY="178.0" prefHeight="17.0" prefWidth="49.0" text="Train %" textFill="#dbfcd2" style="-fx-font-size: 10;"  />
+        <Spinner fx:id="trainSpinner" editable="true" layoutX="238.0" layoutY="174.0" prefHeight="25.0" prefWidth="57.0" />
+        <Button fx:id="defaultKButton" layoutX="215.0" layoutY="82.0" mnemonicParsing="false" onAction="#defaultNeighbors" prefHeight="25.0" prefWidth="77.0" text="default" />
+    </children>
+</AnchorPane>
